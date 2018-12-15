@@ -1,24 +1,13 @@
-import App, { Container } from "next/app";
-import React from "react";
+import Head from "next/head";
 
-export default class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
+export default () => (
+  <Head>
+      <title>BTF</title>
+    <meta charSet="UTF-8" />
+    <style jsx global>{`
 
-    return { pageProps };
-  }
-
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <Container>
-        <Component {...pageProps} />
-        <style jsx global>{`
-        :root {
+    :root {
         --site-bg: #0000FF;
         --primary: #53FF45;
         --primary-light: rgba(255, 255, 255, 1);
@@ -256,8 +245,6 @@ export default class MyApp extends App {
       summary {
         display: block;
       }
-        `}</style>
-      </Container>
-    );
-  }
-}
+    `}</style>
+  </Head>
+);

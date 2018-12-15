@@ -1,73 +1,22 @@
-import React from "react";
-import IconArrowDown from "./icons/icon-arrow-down";
 import Link from "next/link";
-import ActiveLink from "./ActiveLink";
 
-export default class Header extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      mobileNavShown: false
-    };
-
-    this.toggleMobileNav = this.toggleMobileNav.bind(this);
-  }
-
-  toggleMobileNav() {
-    this.setState({
-      mobileNavShown: !this.state.mobileNavShown
-    });
-  }
-
-  render() {
-    const { mobileNavShown } = this.state;
-    return (
-      <React.Fragment>
-        <header className="container">
-          <Link href="/">
-            <a className="logo">
-              <span className="logoSpan">BTF</span>
-            </a>
-          </Link>
-
-          <nav>
-            <ActiveLink href="/bigtext">Bigtext</ActiveLink>
-            <ActiveLink href="/typography">Typography</ActiveLink>
-            <ActiveLink href="/projects">Projects</ActiveLink>
-            <ActiveLink href="/blog">Blog</ActiveLink>
-          </nav>
-
-          <div className="header__right">
-            <a
-              className="github-logo"
-              target="_blank"
-              href="https://github.com/0str1ch/js-app"
-              rel="noopener"
-            >
-            </a>
-          </div>
-
-          <a className="header__mobile-toggle" onClick={this.toggleMobileNav}>
-            <IconArrowDown />
-          </a>
-        </header>
-
-        <nav className="header__mobile-nav container">
-          <ActiveLink href="/bigtext">Bigtext</ActiveLink>
-          <ActiveLink href="/typography">Typography</ActiveLink>
-          <ActiveLink href="/projects">Projects</ActiveLink>
-          <ActiveLink href="/blog">Blog</ActiveLink>
-        </nav>
-
-        <style jsx>{`
+const Header = () => (
+  <header>
+    <Link href="/">
+      <a className="logo">
+       <span>BTF</span>
+      </a>
+    </Link>
+    <nav className="navWrapper">
+      <style jsx global>
+        {`
           header {
             padding: 1rem;
             display: flex;
             justify-content: space-between;
             position: relative;
             align-items: center;
-            height: 10vh;
+            height: 100px;
             z-index: 2000;
           }
           nav {
@@ -76,16 +25,16 @@ export default class Header extends React.Component {
             transform: translateX(-50%);
             line-height: 2.3rem;
           }
-          a {
-            font-size: var(--text-normal);
+          nav a {
+            font-size: 2em;
             transition: color 0.2s ease;
             text-decoration: none;
           }
           a:active {
             text-decoration: none;
           }
-          a:hover {
-            color: var(--primary);
+          nav a:hover {
+            color: red;
           }
           nav :global(a):not(:last-child) {
             margin-right: 24px;
@@ -96,26 +45,19 @@ export default class Header extends React.Component {
             /*top: 3vw;
                 left: 5vw;*/
             z-index: 1;
-            font-family: inherit;
             font-weight: 900;
-            font-style: normal;
-            font-stretch: normal;
-            font-size: var(--h4-small);
+            font-size: 2em;
             text-transform: uppercase;
             text-decoration: none;
             line-height: 0.85em;
             font-smoothing: antialiased;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            transition: all 0.2s ease-in-out 0.05s,
-              transform 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.25s;
           }
           .logoSpan {
             display: block;
             position: relative;
             width: 100%;
             overflow: hidden;
-            color: var(--primary-text);
+            color: red;
           }
           .header__right {
             display: flex;
@@ -146,7 +88,6 @@ export default class Header extends React.Component {
               display: block;
             }
             .header__mobile-nav {
-              display: ${mobileNavShown ? "flex" : "none"};
               width: 100%;
               flex-direction: column;
               align-items: center;
@@ -172,8 +113,10 @@ export default class Header extends React.Component {
               margin-right: 0;
             }
           }
-        `}</style>
-      </React.Fragment>
-    );
-  }
-}
+        `}
+      </style>
+    </nav>
+  </header>
+);
+
+export default Header;
