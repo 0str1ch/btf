@@ -33,7 +33,8 @@ export default class MyApp extends App {
             --hint-light: rgba(255, 255, 255, 0.35);
             --error: #ff5b0f;
             --shadow: rgba(235, 237, 242, 0.9);
-            --primary-text: rgba(0, 0, 0, 0.87);
+            --primary-text: var(--light-text);
+            --dark-text: rgba(0, 0, 0, 0.87);
             --secondary-text: rgba(0, 0, 0, 0.67);
             --light-text: #fff;
             --money: #2A7221;
@@ -57,6 +58,7 @@ export default class MyApp extends App {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI,
               Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
             font-weight: 400;
+            color: var(--primary-text);
             min-width: 320px;
             direction: ltr;
             overflow-x: hidden;
