@@ -40,12 +40,20 @@ export default class Header extends React.Component {
 
           <div className="header__right">
             <a
-              className="github-logo"
+              className="nav-button nav-button-secondary"
               target="_blank"
               href="https://github.com/0str1ch/js-app"
               rel="noopener"
             >
               <span>Donate</span>
+            </a>
+            <a
+              className="nav-button nav-button-primary"
+              target="_blank"
+              href="https://github.com/0str1ch/js-app"
+              rel="noopener"
+            >
+              <span>Subscribe</span>
             </a>
           </div>
 
@@ -98,7 +106,7 @@ export default class Header extends React.Component {
             font-weight: 900;
             font-style: normal;
             font-stretch: normal;
-            font-size: var(--h4-small);
+            font-size: 29px;
             text-transform: uppercase;
             text-decoration: none;
           }
@@ -124,21 +132,31 @@ export default class Header extends React.Component {
           .header__mobile-toggle {
             display: none;
           }
-          .github-logo {
-            font-size: var(--h4-small);
+          .nav-button {
+            font-size: var(--text-normal);
             font-weight: 700;
-            color: var(--light-text);
-            border: 2px solid var(--primary-light);
+            letter-spacing: 0.777px;
             border-radius: 7px;
             padding: 0 1em;
             display: flex;
-            height: 2em;
+            height: 2.2em;
             place-items: center;
             text-transform: uppercase;
           }
 
-          .github-logo span {
-              line-height: 2em;
+          .nav-button-secondary {
+            color: var(--light-text);
+            border: 2px solid var(--primary-light);
+          }
+
+          .nav-button-primary {
+            color: var(--light-text);
+            background: var(--primary);
+            border: 0;
+          }
+
+          .nav-button span {
+            line-height: 2.2em;
           }
           @media (max-width: 768px) {
             nav,
