@@ -80,73 +80,6 @@ export default ({ children }) => (
           opacity: 0;
         }
 
-        @font-face {
-          font-family: "Untitled Sans";
-          font-display: swap;
-          src: url("/static/fonts/Untitled_Sans_Regular.woff2") format("woff2");
-          font-weight: normal;
-          font-style: normal;
-        }
-
-        @font-face {
-          font-family: "Untitled Sans";
-          font-display: swap;
-          src: url("/static/fonts/Untitled_Sans_Regular_Italic.woff2")
-            format("woff2");
-          font-weight: normal;
-          font-style: italic;
-        }
-
-        @font-face {
-          font-family: "Untitled Sans";
-          font-display: swap;
-          src: url("/static/fonts/Untitled_Sans_Medium_Italic.woff2")
-            format("woff2");
-          font-weight: normal;
-          font-style: italic;
-        }
-
-        @font-face {
-          font-family: "Untitled Sans";
-          font-display: swap;
-          src: url("/static/fonts/Untitled_Sans_Bold.woff2") format("woff2");
-          font-weight: 700;
-          font-style: normal;
-        }
-
-        @font-face {
-          font-family: "Untitled Sans";
-          font-display: swap;
-          src: url("/static/fonts/Untitled_Sans_Bold_Italic.woff2")
-            format("woff2");
-          font-weight: 700;
-          font-style: italic;
-        }
-
-        @font-face {
-          font-family: "Untitled Sans";
-          font-display: swap;
-          src: url("/static/fonts/Untitled_Sans_Medium.woff2") format("woff2");
-          font-weight: 500;
-          font-style: normal;
-        }
-
-        @font-face {
-          font-family: "Untitled Sans";
-          font-display: swap;
-          src: url("/static/fonts/Untitled_Sans_Black.woff2") format("woff2");
-          font-weight: 900;
-          font-style: normal;
-        }
-
-        @font-face {
-          font-family: "MaisonNeue-Mono";
-          font-display: swap;
-          src: url("/static/fonts/MaisonNeue-Mono.woff2") format("woff2");
-          font-weight: normal;
-          font-style: normal;
-        }
-
         * {
           -ms-font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "alt" 1;
           -webkit-font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
@@ -170,7 +103,6 @@ export default ({ children }) => (
         }
 
         :root {
-          /*font-size: calc(1vw + 1vh + .5vmin);*/
           --h1-xl: 3.157em;
           --h2-large: 2.369em;
           --h3-medium: 1.777em;
@@ -313,7 +245,7 @@ export default ({ children }) => (
         }
         .token.punctuation,
         .token.operator {
-          color: #393a34; /* no highlight */
+          color: #393a34;
         }
         .token.url,
         .token.symbol,
