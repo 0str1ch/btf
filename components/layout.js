@@ -8,7 +8,6 @@ const Layout = props => (
     <div className="layoutInner">{props.children}</div>
     <style jsx global>
       {`
-
         .layoutWrapper {
           align-items: stretch;
           display: flex;
@@ -101,13 +100,6 @@ const Layout = props => (
           }
         }
 
-
-
-        body {
-          font-weight: 400;
-          color: var(--secondary-text);
-        }
-
         p {
           margin-bottom: 1.3em;
           color: var(--secondary-text);
@@ -176,6 +168,26 @@ const Layout = props => (
         p:last-child,
         p:only-child {
           margin-bottom: 0;
+        }
+
+        ul {
+          list-style-type: none;
+          margin-left: 1em;
+          padding: 0px;
+        }
+
+        ul > li::before {
+          content: "–";
+          display: inline-block;
+          color: var(--hint-light);
+          position: absolute;
+          margin-left: -1em;
+        }
+
+        li {
+          font-size: var(--text-normal);
+          line-height: 1.5;
+          margin-bottom: 0.6em;
         }
 
         code,
