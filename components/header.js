@@ -1,122 +1,120 @@
 const Header = () => (
-  <header className="container">
-    <span>BTF</span>
-    <nav />
-    <style jsx>{`
-      header {
-        padding: 1rem;
-        display: flex;
-        justify-content: space-between;
+  <nav className="navWrapper">
+<h1>hi</h1>      
+    <style jsx global>
+      {`
+      .navIcon {
+        fill: var(--secondary);
         position: relative;
-        align-items: center;
-        height: 10vh;
-        z-index: 2000;
+        height: 1.5rem;
+        width: 100%;
+        transition: fill 100ms ease-in;
       }
-      nav {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        line-height: 2.3rem;
+      .navWrapper {
+        backface-visibility: hidden;
       }
-      a {
-        font-size: var(--text-normal);
-        transition: color 0.2s ease;
-        text-decoration: none;
+      @media screen and (min-width: 60em) {
+        .navWrapper {
+          display: flex;
+        }
       }
-      a:active {
-        text-decoration: none;
+       {
+        /* .navPanel:before,
+      .mobileNav:before {
+        content: "";
+        position: fixed;
+        display: block;
+        height: 4px;
+        background: var(--primary);
+        background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+        width: 100%;
+        top: 0;
+        z-index: 10;
+      } */
       }
-      a:hover {
+      .navList {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        place-items: center;
+        height: 100vh;
+        width: 6vw;
+        position: fixed;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.97);
+        box-shadow: 1px 0px 0 0 var(--shadow);
+      }
+      .navList a {
+        color: var(--secondary);
+        z-index: 30;
+        display: block;
+      }
+      .navList > li > a:hover,
+      .navList > li > a:focus {
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px);
+      }
+      .navList > li:nth-child(1) a:hover,
+      .navList > li:nth-child(1) a:focus,
+      .navList > li:nth-child(1) a:active {
+        transform: none;
+      }
+      .navList > li > a {
+        -webkit-transition: 0.1s;
+        transition: 0.1s;
+      }
+      .navList > li {
+        margin-bottom: 1.5rem;
+      }
+      .navList > li:nth-child(1) {
+        margin-bottom: 3rem;
+      }
+      .navList > li > a:hover > span,
+      .navList > li > a:focus > span {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .navList > li > a > span {
+        display: block;
+        transform: translateX(-200px);
+        transition: 0.1s;
+        text-align: center;
+        font-size: 1vw;
+        margin-top: 2%;
+      }
+      .navList:hover > li:nth-child(2) span,
+      .navList:focus > li:nth-child(2) span {
+        transition-delay: 0.02s;
+      }
+      .navList:hover > li:nth-child(3) span,
+      .navList:focus > li:nth-child(3) span {
+        transition-delay: 0.04s;
+      }
+      .navList:hover > li:nth-child(4) span,
+      .navList:focus > li:nth-child(4) span {
+        transition-delay: 0.08s;
+      }
+      .navList:hover > li:nth-child(5) span,
+      .navList:focus > li:nth-child(5) span {
+        transition-delay: 0.1s;
+      }
+      .navList:hover > li > a > span,
+      .navList:focus > li > a > span {
+        transform: translateX(0);
+      }
+      .navList > li > a:hover > div > svg,
+      .navList > li > a:focus > div > svg {
+        fill: var(--primary);
+      }
+      .navList li:first-of-type a {
         color: var(--primary);
       }
-      nav :global(a):not(:last-child) {
-        margin-right: 24px;
-      }
-      .logo {
-        display: block;
-        position: relative;
-        /*top: 3vw;
-                left: 5vw;*/
-        z-index: 1;
-        font-family: inherit;
-        font-weight: 900;
-        font-style: normal;
-        font-stretch: normal;
-        font-size: var(--h4-small);
-        text-transform: uppercase;
-        text-decoration: none;
-        line-height: 0.85em;
-        font-smoothing: antialiased;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-        transition: all 0.2s ease-in-out 0.05s,
-          transform 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.25s;
-      }
+    `}
 
-      .logoSpan {
-        display: block;
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        color: var(--primary-text);
-      }
-      .header__right {
-        display: flex;
-        align-items: center;
-      }
-      .header__right a:last-child {
-        margin-left: 24px;
-      }
-      .submit {
-        margin-left: 24px;
-      }
-      .header__mobile-nav {
-        display: none;
-      }
-      .header__mobile-toggle {
-        display: none;
-      }
-      .github-logo {
-        font-size: 1.5rem;
-        color: var(--hint);
-      }
-      @media (max-width: 768px) {
-        nav,
-        .header__right {
-          display: none;
-        }
-        .header__mobile-toggle {
-          display: block;
-        }
-        .header__mobile-nav {
-          width: 100%;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-          margin-bottom: 48px;
-        }
-        .header__mobile-nav :global(a),
-        .header__mobile-nav :global(.search-input) {
-          height: 48px;
-          width: 100%;
-          border-bottom: 1px solid var(--hint);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-decoration: none;
-          color: var(--secondary);
-        }
-        .header__mobile-nav :global(.search-input input) {
-          width: 100%;
-          font-size: 1.6rem;
-        }
-        .header__mobile-nav :global(a):not(:last-child) {
-          margin-right: 0;
-        }
-      }
-    `}</style>
-  </header>
-);
+    </style>
+  </nav>
+)
 
-export default Header;
+export default Header

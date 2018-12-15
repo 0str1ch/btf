@@ -1,17 +1,10 @@
 import Header from "./Header";
 import Head from "next/head";
 
-export default ({ children }) => (
+const Layout = props => (
   <main className="layoutWrapper">
-    <Head>
-      <title>BTF</title>
-      <meta
-        name="description"
-        content="Welcome to the BTF clan's website for misguided gamers."
-      />
-    </Head>
     <Header/>
-    <div className="layoutInner">{children}</div>
+    <div className="layoutInner">{props.children}</div>
     <style jsx global>
       {`
         .layoutWrapper {
@@ -408,4 +401,6 @@ export default ({ children }) => (
       `}
     </style>
   </main>
-);
+)
+
+export default Layout
