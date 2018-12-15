@@ -32,10 +32,10 @@ export default class Header extends React.Component {
           </Link>
 
           <nav>
-            <ActiveLink href="/join">Bigtext</ActiveLink>
-            <ActiveLink href="/join">Bigtext</ActiveLink>
-            <ActiveLink href="/join">Bigtext</ActiveLink>
-            <ActiveLink href="/join">Bigtext</ActiveLink>
+            <ActiveLink href="/join">Join</ActiveLink>
+            <ActiveLink href="/rules">Rules</ActiveLink>
+            <ActiveLink href="/members">Members</ActiveLink>
+            <ActiveLink href="/contact">Contact</ActiveLink>
           </nav>
 
           <div className="header__right">
@@ -63,10 +63,10 @@ export default class Header extends React.Component {
         </header>
 
         <nav className="header__mobile-nav container">
-          <ActiveLink href="/join">Bigtext</ActiveLink>
-          <ActiveLink href="/join">Typography</ActiveLink>
-          <ActiveLink href="/join">Projects</ActiveLink>
-          <ActiveLink href="/join">Blog</ActiveLink>
+          <ActiveLink href="/join">Join</ActiveLink>
+          <ActiveLink href="/rules">Rules</ActiveLink>
+          <ActiveLink href="/members">Members</ActiveLink>
+          <ActiveLink href="/contact">Contact</ActiveLink>
         </nav>
 
         <style jsx global>{`
@@ -79,11 +79,22 @@ export default class Header extends React.Component {
             min-height: 100px;
             z-index: 2000;
           }
+
           nav {
             position: absolute;
             left: 0;
             margin-left: 7em;
             line-height: 2.3rem;
+          }
+
+          @media (max-width: 768px) {
+            nav {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              line-height: 2.3rem;
+              margin-left: 0;
+            }
           }
 
           nav :global(a):not(:last-child) {
