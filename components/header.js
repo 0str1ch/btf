@@ -62,7 +62,7 @@ export default class Header extends React.Component {
           <ActiveLink href="/join">Blog</ActiveLink>
         </nav>
 
-        <style jsx>{`
+        <style jsx global>{`
           header {
             padding: 1rem;
             display: flex;
@@ -85,8 +85,6 @@ export default class Header extends React.Component {
           .logo {
             display: block;
             position: relative;
-            /*top: 3vw;
-                left: 5vw;*/
             z-index: 1;
             font-family: inherit;
             font-weight: 900;
