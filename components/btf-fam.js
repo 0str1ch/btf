@@ -17,6 +17,7 @@ const BTFfam = () => (
           bottom: -1rem;
           left: 0;
           overflow: hidden;
+          z-index: 100;
         }
       `}
     </style>

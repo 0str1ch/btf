@@ -2,7 +2,7 @@ import Header from "./Header";
 import Meta from "./Meta";
 
 const Layout = props => (
-  <main className="layoutWrapper">
+  <main className="layoutWrapper layoutWrapperDark">
     <Meta />
     <Header />
     <div className="layoutInner">{props.children}</div>
@@ -18,6 +18,10 @@ const Layout = props => (
           width: 100%;
           position: relative;
           overflow-scrolling: touch;
+        }
+
+        .layoutWrapperDark {
+          background: var(--bg-dark);
         }
 
         .layoutInner {

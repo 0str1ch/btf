@@ -27,16 +27,15 @@ export default class Header extends React.Component {
         <header className="container">
           <Link href="/">
             <a className="logo">
-              <span className="logoSpan">BTF</span>
+              <div className="logoSpan">BTF</div>
             </a>
           </Link>
 
           <nav>
-          <ActiveLink href="/join">Bigtext</ActiveLink>
-          <ActiveLink href="/join">Bigtext</ActiveLink>
-          <ActiveLink href="/join">Bigtext</ActiveLink>
-          <ActiveLink href="/join">Bigtext</ActiveLink>
-
+            <ActiveLink href="/join">Bigtext</ActiveLink>
+            <ActiveLink href="/join">Bigtext</ActiveLink>
+            <ActiveLink href="/join">Bigtext</ActiveLink>
+            <ActiveLink href="/join">Bigtext</ActiveLink>
           </nav>
 
           <div className="header__right">
@@ -46,7 +45,7 @@ export default class Header extends React.Component {
               href="https://github.com/0str1ch/js-app"
               rel="noopener"
             >
-            <span>Donate</span>
+              <span>Donate</span>
             </a>
           </div>
 
@@ -69,7 +68,7 @@ export default class Header extends React.Component {
             justify-content: space-between;
             position: relative;
             align-items: center;
-            height: 100px;
+            min-height: 100px;
             z-index: 2000;
           }
           nav {
@@ -83,7 +82,16 @@ export default class Header extends React.Component {
             margin-right: 24px;
           }
           .logo {
-            display: block;
+            display: flex;
+            place-content: center;
+            place-items: center;
+            position: relative;
+            background: var(--primary);
+            margin: 0;
+            padding: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 7px;
             position: relative;
             z-index: 1;
             font-family: inherit;
@@ -93,11 +101,12 @@ export default class Header extends React.Component {
             font-size: var(--h4-small);
             text-transform: uppercase;
             text-decoration: none;
-
           }
           .logoSpan {
             overflow: hidden;
-            color: var(--primary-text);
+            color: var(--light-text);
+            line-height: 1;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
           }
           .header__right {
             display: flex;
@@ -116,8 +125,20 @@ export default class Header extends React.Component {
             display: none;
           }
           .github-logo {
-            font-size: 1.5rem;
-            color: var(--hint);
+            font-size: var(--h4-small);
+            font-weight: 700;
+            color: var(--light-text);
+            border: 2px solid var(--primary-light);
+            border-radius: 7px;
+            padding: 0 1em;
+            display: flex;
+            height: 2em;
+            place-items: center;
+            text-transform: uppercase;
+          }
+
+          .github-logo span {
+              line-height: 2em;
           }
           @media (max-width: 768px) {
             nav,
@@ -135,8 +156,7 @@ export default class Header extends React.Component {
               position: relative;
               margin-bottom: 48px;
             }
-            .header__mobile-nav :global(a),
-            .header__mobile-nav :global(.search-input) {
+            .header__mobile-nav :global(a) {
               height: 48px;
               width: 100%;
               border-bottom: 1px solid var(--hint);
@@ -145,10 +165,6 @@ export default class Header extends React.Component {
               justify-content: center;
               text-decoration: none;
               color: var(--secondary);
-            }
-            .header__mobile-nav :global(.search-input input) {
-              width: 100%;
-              font-size: 1.6rem;
             }
             .header__mobile-nav :global(a):not(:last-child) {
               margin-right: 0;

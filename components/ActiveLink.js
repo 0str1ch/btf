@@ -11,7 +11,7 @@ const ActiveLink = ({ children, router, href }) => (
           font-size: var(--text-normal);
           text-decoration: none;
           transition: color 0.2s ease;
-          color: ${router.pathname === href ? 'var(--primary)' : 'var(--secondary-text)'};
+          color: ${router.pathname === href ? 'var(--primary)' : 'var(--light-text)'};
         }
         a:hover {
           color: var(--primary);

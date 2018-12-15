@@ -20,7 +20,8 @@ export default class MyApp extends App {
         <style jsx global>{`
         :root {
         --site-bg: #0000FF;
-        --primary: #53FF45;
+        --bg-dark: #010101;
+        --primary: linear-gradient(135deg, rgba(237,33,58,1) 0%, rgba(147,41,30,1) 100%);
         --primary-light: rgba(255, 255, 255, 1);
         --secondary: rgba(46, 62, 72, 0.6);
         --secondary-light: rgba(255, 255, 255, 0.7);
@@ -54,6 +55,7 @@ export default class MyApp extends App {
         font-weight: 400;
         min-width: 320px;
         direction: ltr;
+        overflow-x: hidden;
         font-feature-settings: "kern";
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
@@ -94,12 +96,7 @@ export default class MyApp extends App {
         border-collapse: collapse;
         border-spacing: 0;
       }
-      body {
-        height: 100%;
-        width: 100%;
-        position: relative;
-        overflow-x: hidden;
-      }
+
       * {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
@@ -121,6 +118,11 @@ export default class MyApp extends App {
       button:focus,
       select:focus {
         outline: thin dotted var(--hint);
+      }
+
+      a {
+        outline: 0;
+        text-decoration: inherit;
       }
 
       p {
