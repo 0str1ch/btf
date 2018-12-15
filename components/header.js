@@ -1,6 +1,7 @@
 import React from "react";
 import IconArrowDown from "./icons/icon-arrow-down";
 import Link from "next/link";
+import ActiveLink from "./ActiveLink";
 
 export default class Header extends React.Component {
   constructor() {
@@ -31,10 +32,11 @@ export default class Header extends React.Component {
           </Link>
 
           <nav>
-            <Link href="/join"><a>test</a></Link>
-            <Link href="/join"><a>test</a></Link>
-            <Link href="/join"><a>test</a></Link>
-            <Link href="/join"><a>test</a></Link>
+          <ActiveLink href="/join">Bigtext</ActiveLink>
+          <ActiveLink href="/join">Bigtext</ActiveLink>
+          <ActiveLink href="/join">Bigtext</ActiveLink>
+          <ActiveLink href="/join">Bigtext</ActiveLink>
+
           </nav>
 
           <div className="header__right">
@@ -54,10 +56,10 @@ export default class Header extends React.Component {
         </header>
 
         <nav className="header__mobile-nav container">
-        <Link href="/join"><a>test</a></Link>
-        <Link href="/join"><a>test</a></Link>
-        <Link href="/join"><a>test</a></Link>
-        <Link href="/join"><a>test</a></Link>
+          <ActiveLink href="/join">Bigtext</ActiveLink>
+          <ActiveLink href="/join">Typography</ActiveLink>
+          <ActiveLink href="/join">Projects</ActiveLink>
+          <ActiveLink href="/join">Blog</ActiveLink>
         </nav>
 
         <style jsx>{`
