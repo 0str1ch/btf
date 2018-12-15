@@ -1,9 +1,11 @@
-export default ({
-  children,
-  ...props
-}) => (
-  <div {...props}>
-  <style jsx global>
+import Header from "./Header";
+import Head from "next/head";
+
+const Layout = props => (
+  <main className="layoutWrapper">
+    <Header />
+    <div className="layoutInner">{props.children}</div>
+    <style jsx global>
       {`
         .layoutWrapper {
           align-items: stretch;
@@ -15,16 +17,19 @@ export default ({
           position: relative;
           overflow-scrolling: touch;
         }
+
         .layoutInner {
           display: block;
           width: 100%;
         }
+
         @media screen and (min-width: 60em) {
           .layoutInner {
             display: flex;
             flex-wrap: wrap;
           }
         }
+
         @keyframes fadeup {
           0% {
             transform: translateY(50px);
@@ -35,6 +40,7 @@ export default ({
             opacity: 1;
           }
         }
+
         .introduce {
           display: flex;
           flex-direction: column;
@@ -43,6 +49,7 @@ export default ({
             normal both running;
           will-change: transform, opacity;
         }
+
         .introduceMedia {
           place-content: center;
           display: flex;
@@ -50,17 +57,29 @@ export default ({
           animation: fadeup 300ms cubic-bezier(0.39, 0.575, 0.565, 1) 0.61s 1
             normal both running;
         }
+
+        .btf-fam {
+          width: 100%;
+          position: fixed;
+          bottom: -1rem;
+          overflow: hidden;
+        }
+
         .BaseImage {
         }
+
         .introduce span {
           color: var(--secondary);
         }
+
         .introduce h1 {
           font-weight: 700;
         }
+
         .connectHover1:hover ~ section .terminalWrapper {
           opacity: 0;
         }
+
         * {
           -ms-font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "alt" 1;
           -webkit-font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
@@ -71,6 +90,7 @@ export default ({
           -webkit-font-variant-ligatures: common-ligatures contextual;
           font-variant-ligatures: common-ligatures contextual;
         }
+
         @media (min-width: 30em) {
           :root {
             font-size: calc(1rem + ((1vw - 0.3em) * 0.5556));
@@ -81,6 +101,7 @@ export default ({
             font-size: 1.5em;
           }
         }
+
         :root {
           --h1-xl: 3.157em;
           --h2-large: 2.369em;
@@ -90,14 +111,17 @@ export default ({
           --text-normal: 1em;
           --text-small: 0.777em;
         }
+
         body {
           font-weight: 400;
           color: var(--secondary-text);
         }
+
         p {
           margin-bottom: 1.3em;
           color: var(--secondary-text);
         }
+
         h1,
         h2,
         h3,
@@ -105,42 +129,51 @@ export default ({
           margin: 1.414rem 0 0.5rem;
           line-height: 1.2;
         }
+
         h1 {
           margin-top: 0;
           font-size: var(--h1-xl);
           font-weight: 900;
           color: var(--primary-text);
         }
+
         h2 {
           font-size: var(--h2-large);
           font-weight: 900;
           color: var(--primary-text);
         }
+
         h3 {
           font-size: var(--h3-medium);
           font-weight: 700;
           color: var(--primary-text);
         }
+
         h4 {
           font-size: var(--h4-small);
           color: var(--primary-text);
         }
+
         small,
         .font_small {
           font-size: var(--text-small);
         }
+
         strong {
           font-family: "Untitled Sans";
           font-weight: 500;
         }
+
         em {
           font-family: "Untitled Sans";
           font-style: italic;
         }
+
         a {
           text-decoration: underline;
           color: currentColor;
         }
+
         h1:last-child,
         h1:only-child,
         h2:last-child,
@@ -153,10 +186,12 @@ export default ({
         p:only-child {
           margin-bottom: 0;
         }
+
         code,
         pre {
           font-family: MaisonNeue-Mono, monospace;
         }
+
         code:before,
         code:after {
           content: "\`";
@@ -165,6 +200,7 @@ export default ({
         pre code:after {
           content: none;
         }
+
         p > code,
         li > code,
         dd > code,
@@ -178,6 +214,7 @@ export default ({
           word-wrap: break-word;
           font-family: MaisonNeue-Mono, monospace;
         }
+
         code[class*="language-"],
         pre[class*="language-"] {
           color: #393a34;
@@ -267,16 +304,19 @@ export default ({
           background: #ffff00;
           color: #393a34;
         }
+
         blockquote {
           display: block;
           padding: 1.25em 0;
           margin-bottom: 1.5em;
           width: 100%;
         }
+
         blockquote,
         q {
           quotes: none;
         }
+
         blockquote:after,
         blockquote:before,
         q:after,
@@ -284,56 +324,69 @@ export default ({
           content: "";
           content: none;
         }
+
         blockquote.left-pull {
           margin-left: -40%;
         }
+
         @media only screen and (max-width: 36em) {
           blockquote.left-pull {
             margin-left: 0;
           }
         }
+
         blockquote.right-pull {
           width: 130%;
           margin-left: 15%;
         }
+
         @media only screen and (max-width: 36em) {
           blockquote.right-pull {
             width: 100%;
             margin-left: 0;
           }
         }
+
         blockquote .video {
           margin-bottom: 1.5em;
         }
+
         blockquote p {
           font-size: var(--h3-medium);
           color: var(--primary);
           line-height: 1.2;
         }
+
         blockquote p:first-of-type:before {
           content: "";
         }
+
         blockquote p:last-of-type:after {
           content: "";
         }
+
         blockquote span {
           display: block;
           text-align: right;
         }
+
         .quote-position,
         .quote-source {
           color: #000;
           opacity: 0.5;
         }
+
         .quote-source {
           font-family: NeueHaasBold, Helvetica, sans-serif;
           font-size: 1.5em;
           padding-bottom: 0.25em;
           margin-top: -1em;
         }
+
         .quote-source:before {
           content: "";
         }
+
         .quote-position {
           font-family: AndaleMono, monospace;
           letter-spacing: 0.1em;
@@ -342,16 +395,233 @@ export default ({
           font-size: 0.75em;
           font-weight: 700;
         }
+
         .quote-position + .quote-position {
           margin-top: 0.5em;
         }
+
         .col-2 {
           display: grid;
           grid-gap: 2rem;
           grid-template-columns: 1fr 1fr;
         }
+
+        body {
+        position: relative;
+        min-height: 100%;
+        margin: 0;
+        line-height: 1.6;
+        font-family: "Untitled Sans", system-ui, -apple-system,
+          BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial,
+          sans-serif;
+        font-weight: 400;
+        min-width: 320px;
+        direction: ltr;
+        font-feature-settings: "kern";
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        background: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+      }
+      /*
+* === Resets & Fixes ===
+*/
+      html {
+        -ms-overflow-style: -ms-autohiding-scrollbar !important;
+        /* MS Edge and IE scrollbar hide */
+      }
+      *,
+      *::before,
+      *::after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-font-kerning: auto;
+        font-kerning: auto;
+        word-wrap: break-word;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      body {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow-x: hidden;
+      }
+      * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      :after,
+      :before {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      ::-moz-selection {
+        background: var(--primary);
+        color: var(--primary-light);
+      }
+      ::selection {
+        background: var(--primary);
+        color: var(--primary-light);
+      }
+      button:focus,
+      select:focus {
+        outline: thin dotted var(--hint);
+      }
+      a {
+        outline: 0;
+        text-decoration: inherit;
+      }
+      a,
+      abbr,
+      acronym,
+      address,
+      applet,
+      article,
+      aside,
+      audio,
+      b,
+      big,
+      blockquote,
+      body,
+      canvas,
+      caption,
+      center,
+      cite,
+      dd,
+      del,
+      details,
+      dfn,
+      div,
+      dl,
+      dt,
+      em,
+      embed,
+      fieldset,
+      figcaption,
+      figure,
+      footer,
+      form,
+      header,
+      hgroup,
+      html,
+      i,
+      iframe,
+      img,
+      ins,
+      kbd,
+      label,
+      legend,
+      li,
+      mark,
+      menu,
+      nav,
+      object,
+      ol,
+      output,
+      q,
+      ruby,
+      s,
+      samp,
+      section,
+      small,
+      span,
+      strike,
+      strong,
+      sub,
+      summary,
+      sup,
+      table,
+      tbody,
+      td,
+      tfoot,
+      th,
+      thead,
+      time,
+      tr,
+      tt,
+      u,
+      ul,
+      var,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+      }
+      p {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      * + address,
+      * + dl,
+      * + fieldset,
+      * + figure,
+      * + pre {
+        margin-top: 0;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      svg {
+        vertical-align: middle;
+      }
+      svg {
+        shape-rendering: crispEdges;
+      }
+      svg path,
+      svg circle {
+        shape-rendering: geometricprecision;
+      }
+      video {
+        height: auto;
+        width: 100%;
+      }
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      main,
+      nav,
+      section,
+      summary {
+        display: block;
+      }
       `}
     </style>
-    {children}
-  </div>
-);
+  </main>
+)
+
+export default Layout
