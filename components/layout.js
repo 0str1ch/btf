@@ -1,11 +1,9 @@
-import Header from "./Header";
-import Head from "next/head";
-
-const Layout = props => (
-  <main className="layoutWrapper">
-    <Header/>
-    <div className="layoutInner">{props.children}</div>
-    <style jsx global>
+export default ({
+  children,
+  ...props
+}) => (
+  <div {...props}>
+  <style jsx global>
       {`
         .layoutWrapper {
           align-items: stretch;
@@ -17,19 +15,16 @@ const Layout = props => (
           position: relative;
           overflow-scrolling: touch;
         }
-
         .layoutInner {
           display: block;
           width: 100%;
         }
-
         @media screen and (min-width: 60em) {
           .layoutInner {
             display: flex;
             flex-wrap: wrap;
           }
         }
-
         @keyframes fadeup {
           0% {
             transform: translateY(50px);
@@ -40,7 +35,6 @@ const Layout = props => (
             opacity: 1;
           }
         }
-
         .introduce {
           display: flex;
           flex-direction: column;
@@ -49,7 +43,6 @@ const Layout = props => (
             normal both running;
           will-change: transform, opacity;
         }
-
         .introduceMedia {
           place-content: center;
           display: flex;
@@ -57,22 +50,17 @@ const Layout = props => (
           animation: fadeup 300ms cubic-bezier(0.39, 0.575, 0.565, 1) 0.61s 1
             normal both running;
         }
-
         .BaseImage {
         }
-
         .introduce span {
           color: var(--secondary);
         }
-
         .introduce h1 {
           font-weight: 700;
         }
-
         .connectHover1:hover ~ section .terminalWrapper {
           opacity: 0;
         }
-
         * {
           -ms-font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "alt" 1;
           -webkit-font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
@@ -83,7 +71,6 @@ const Layout = props => (
           -webkit-font-variant-ligatures: common-ligatures contextual;
           font-variant-ligatures: common-ligatures contextual;
         }
-
         @media (min-width: 30em) {
           :root {
             font-size: calc(1rem + ((1vw - 0.3em) * 0.5556));
@@ -94,7 +81,6 @@ const Layout = props => (
             font-size: 1.5em;
           }
         }
-
         :root {
           --h1-xl: 3.157em;
           --h2-large: 2.369em;
@@ -104,17 +90,14 @@ const Layout = props => (
           --text-normal: 1em;
           --text-small: 0.777em;
         }
-
         body {
           font-weight: 400;
           color: var(--secondary-text);
         }
-
         p {
           margin-bottom: 1.3em;
           color: var(--secondary-text);
         }
-
         h1,
         h2,
         h3,
@@ -122,51 +105,42 @@ const Layout = props => (
           margin: 1.414rem 0 0.5rem;
           line-height: 1.2;
         }
-
         h1 {
           margin-top: 0;
           font-size: var(--h1-xl);
           font-weight: 900;
           color: var(--primary-text);
         }
-
         h2 {
           font-size: var(--h2-large);
           font-weight: 900;
           color: var(--primary-text);
         }
-
         h3 {
           font-size: var(--h3-medium);
           font-weight: 700;
           color: var(--primary-text);
         }
-
         h4 {
           font-size: var(--h4-small);
           color: var(--primary-text);
         }
-
         small,
         .font_small {
           font-size: var(--text-small);
         }
-
         strong {
           font-family: "Untitled Sans";
           font-weight: 500;
         }
-
         em {
           font-family: "Untitled Sans";
           font-style: italic;
         }
-
         a {
           text-decoration: underline;
           color: currentColor;
         }
-
         h1:last-child,
         h1:only-child,
         h2:last-child,
@@ -179,12 +153,10 @@ const Layout = props => (
         p:only-child {
           margin-bottom: 0;
         }
-
         code,
         pre {
           font-family: MaisonNeue-Mono, monospace;
         }
-
         code:before,
         code:after {
           content: "\`";
@@ -193,7 +165,6 @@ const Layout = props => (
         pre code:after {
           content: none;
         }
-
         p > code,
         li > code,
         dd > code,
@@ -207,7 +178,6 @@ const Layout = props => (
           word-wrap: break-word;
           font-family: MaisonNeue-Mono, monospace;
         }
-
         code[class*="language-"],
         pre[class*="language-"] {
           color: #393a34;
@@ -297,19 +267,16 @@ const Layout = props => (
           background: #ffff00;
           color: #393a34;
         }
-
         blockquote {
           display: block;
           padding: 1.25em 0;
           margin-bottom: 1.5em;
           width: 100%;
         }
-
         blockquote,
         q {
           quotes: none;
         }
-
         blockquote:after,
         blockquote:before,
         q:after,
@@ -317,69 +284,56 @@ const Layout = props => (
           content: "";
           content: none;
         }
-
         blockquote.left-pull {
           margin-left: -40%;
         }
-
         @media only screen and (max-width: 36em) {
           blockquote.left-pull {
             margin-left: 0;
           }
         }
-
         blockquote.right-pull {
           width: 130%;
           margin-left: 15%;
         }
-
         @media only screen and (max-width: 36em) {
           blockquote.right-pull {
             width: 100%;
             margin-left: 0;
           }
         }
-
         blockquote .video {
           margin-bottom: 1.5em;
         }
-
         blockquote p {
           font-size: var(--h3-medium);
           color: var(--primary);
           line-height: 1.2;
         }
-
         blockquote p:first-of-type:before {
           content: "";
         }
-
         blockquote p:last-of-type:after {
           content: "";
         }
-
         blockquote span {
           display: block;
           text-align: right;
         }
-
         .quote-position,
         .quote-source {
           color: #000;
           opacity: 0.5;
         }
-
         .quote-source {
           font-family: NeueHaasBold, Helvetica, sans-serif;
           font-size: 1.5em;
           padding-bottom: 0.25em;
           margin-top: -1em;
         }
-
         .quote-source:before {
           content: "";
         }
-
         .quote-position {
           font-family: AndaleMono, monospace;
           letter-spacing: 0.1em;
@@ -388,11 +342,9 @@ const Layout = props => (
           font-size: 0.75em;
           font-weight: 700;
         }
-
         .quote-position + .quote-position {
           margin-top: 0.5em;
         }
-
         .col-2 {
           display: grid;
           grid-gap: 2rem;
@@ -400,7 +352,6 @@ const Layout = props => (
         }
       `}
     </style>
-  </main>
-)
-
-export default Layout
+    {children}
+  </div>
+);
