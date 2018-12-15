@@ -81,8 +81,8 @@ export default class Header extends React.Component {
           }
           nav {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
+            margin-left: 7em;
             line-height: 2.3rem;
           }
 
@@ -142,6 +142,7 @@ export default class Header extends React.Component {
             height: 2.2em;
             place-items: center;
             text-transform: uppercase;
+            box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.39);
           }
 
           .nav-button-secondary {
@@ -153,11 +154,29 @@ export default class Header extends React.Component {
             color: var(--light-text);
             background: var(--primary);
             border: 0;
+            transition: background 0.2s cubic-bezier(0.39, 0.575, 0.565, 1),
+              color 0.2s cubic-bezier(0.39, 0.575, 0.565, 1),
+              box-shadow 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+            padding: 0.01em 1em;
           }
 
           .nav-button span {
             line-height: 2.2em;
           }
+
+          .nav-button-primary:hover {
+            background: var(--secondary);
+            -webkit-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.39);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.39);
+          }
+
+          .nav-button-secondary:hover {
+            background: var(--money);
+            border-color: var(--money);
+            -webkit-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.39);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.39);
+          }
+
           @media (max-width: 768px) {
             nav,
             .header__right {
