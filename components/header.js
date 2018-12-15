@@ -196,6 +196,9 @@ export default class Header extends React.Component {
             .header__mobile-toggle {
               display: block;
             }
+            .header__mobile-toggle svg {
+                fill: var(--light-text);
+            }
             .header__mobile-nav {
               display: ${mobileNavShown ? "flex" : "none"};
               width: 100%;
@@ -212,7 +215,7 @@ export default class Header extends React.Component {
               align-items: center;
               justify-content: center;
               text-decoration: none;
-              color: var(--secondary);
+              color: var(--light-text);
             }
             .header__mobile-nav :global(a):not(:last-child) {
               margin-right: 0;
