@@ -1,18 +1,16 @@
 import Header from "./Header";
-import Meta from "./Meta";
 import Head from "next/head";
 
-export default () => (
+export default ({ children }) => (
   <main className="layoutWrapper">
-    <Meta />
     <Head>
       <title>BTF</title>
       <meta
         name="description"
-        content="Next.js is a lightweight framework for static and server-rendered applications"
+        content="Welcome to the BTF clan's website for misguided gamers."
       />
     </Head>
-    <Header />
+    <Header/>
     <div className="layoutInner">{children}</div>
     <style jsx global>
       {`

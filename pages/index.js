@@ -1,14 +1,13 @@
-import Header from "../components/header";
 import Container from "../components/Container";
+import Layout from "../components/Layout";
+import React from "react";
 
 export default () => (
-<main>
-    <Header/>
-    
+  <Layout>
     <Container padding>
-        <section className="intro">
-            <h1>BTF</h1>
-        </section>
+      <section className="intro">
+        <h1>BTF</h1>
+      </section>
     </Container>
-</main>
+  </Layout>
 );
