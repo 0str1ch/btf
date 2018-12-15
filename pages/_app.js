@@ -122,87 +122,7 @@ export default class MyApp extends App {
       select:focus {
         outline: thin dotted var(--hint);
       }
-      a {
-        outline: 0;
-        text-decoration: inherit;
-      }
-      a,
-      abbr,
-      acronym,
-      address,
-      applet,
-      article,
-      aside,
-      audio,
-      b,
-      big,
-      blockquote,
-      body,
-      canvas,
-      caption,
-      center,
-      cite,
-      dd,
-      del,
-      details,
-      dfn,
-      div,
-      dl,
-      dt,
-      em,
-      embed,
-      fieldset,
-      figcaption,
-      figure,
-      footer,
-      form,
-      header,
-      hgroup,
-      html,
-      i,
-      iframe,
-      img,
-      ins,
-      kbd,
-      label,
-      legend,
-      li,
-      mark,
-      menu,
-      nav,
-      object,
-      ol,
-      output,
-      q,
-      ruby,
-      s,
-      samp,
-      section,
-      small,
-      span,
-      strike,
-      strong,
-      sub,
-      summary,
-      sup,
-      table,
-      tbody,
-      td,
-      tfoot,
-      th,
-      thead,
-      time,
-      tr,
-      tt,
-      u,
-      ul,
-      var,
-      video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        vertical-align: baseline;
-      }
+
       p {
         margin-left: 0;
         margin-right: 0;
@@ -243,19 +163,7 @@ export default class MyApp extends App {
         height: auto;
         width: 100%;
       }
-      article,
-      aside,
-      details,
-      figcaption,
-      figure,
-      footer,
-      header,
-      main,
-      nav,
-      section,
-      summary {
-        display: block;
-      }
+
         `}</style>
       </Container>
     );

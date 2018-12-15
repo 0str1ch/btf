@@ -1,10 +1,7 @@
 import Header from "./Header";
-import Head from "next/head";
-import Meta from "./Meta";
 
 const Layout = props => (
   <main className="layoutWrapper">
-    <Meta/>
     <Header />
     <div className="layoutInner">{props.children}</div>
     <style jsx global>

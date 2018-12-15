@@ -1,7 +1,6 @@
 import React from "react";
 import IconArrowDown from "./icons/icon-arrow-down";
 import Link from "next/link";
-import ActiveLink from "./ActiveLink";
 
 export default class Header extends React.Component {
   constructor() {
@@ -32,10 +31,10 @@ export default class Header extends React.Component {
           </Link>
 
           <nav>
-            <ActiveLink href="/bigtext">Bigtext</ActiveLink>
-            <ActiveLink href="/typography">Typography</ActiveLink>
-            <ActiveLink href="/projects">Projects</ActiveLink>
-            <ActiveLink href="/blog">Blog</ActiveLink>
+            <Link href="/join"><a>test</a></Link>
+            <Link href="/join"><a>test</a></Link>
+            <Link href="/join"><a>test</a></Link>
+            <Link href="/join"><a>test</a></Link>
           </nav>
 
           <div className="header__right">
@@ -45,6 +44,7 @@ export default class Header extends React.Component {
               href="https://github.com/0str1ch/js-app"
               rel="noopener"
             >
+            <span>Donate</span>
             </a>
           </div>
 
@@ -54,10 +54,10 @@ export default class Header extends React.Component {
         </header>
 
         <nav className="header__mobile-nav container">
-          <ActiveLink href="/bigtext">Bigtext</ActiveLink>
-          <ActiveLink href="/typography">Typography</ActiveLink>
-          <ActiveLink href="/projects">Projects</ActiveLink>
-          <ActiveLink href="/blog">Blog</ActiveLink>
+        <Link href="/join"><a>test</a></Link>
+        <Link href="/join"><a>test</a></Link>
+        <Link href="/join"><a>test</a></Link>
+        <Link href="/join"><a>test</a></Link>
         </nav>
 
         <style jsx>{`
@@ -67,7 +67,7 @@ export default class Header extends React.Component {
             justify-content: space-between;
             position: relative;
             align-items: center;
-            height: 10vh;
+            height: 100px;
             z-index: 2000;
           }
           nav {
@@ -76,17 +76,7 @@ export default class Header extends React.Component {
             transform: translateX(-50%);
             line-height: 2.3rem;
           }
-          a {
-            font-size: var(--text-normal);
-            transition: color 0.2s ease;
-            text-decoration: none;
-          }
-          a:active {
-            text-decoration: none;
-          }
-          a:hover {
-            color: var(--primary);
-          }
+
           nav :global(a):not(:last-child) {
             margin-right: 24px;
           }
@@ -103,17 +93,9 @@ export default class Header extends React.Component {
             font-size: var(--h4-small);
             text-transform: uppercase;
             text-decoration: none;
-            line-height: 0.85em;
-            font-smoothing: antialiased;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            transition: all 0.2s ease-in-out 0.05s,
-              transform 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.25s;
+
           }
           .logoSpan {
-            display: block;
-            position: relative;
-            width: 100%;
             overflow: hidden;
             color: var(--primary-text);
           }
