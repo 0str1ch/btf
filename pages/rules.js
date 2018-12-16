@@ -9,7 +9,7 @@ export default () => (
     <Container padding>
       <section className="intro">
         <article>
-          <h1>There are rules to this shit.</h1>
+          <h1>There are rules to this shit, so we wrote you a manual.</h1>
           <h3>Basic Rules</h3>
           <ul>
             <li>
@@ -22,9 +22,12 @@ export default () => (
               channel or server.
             </li>
             <li>
-              This is the Internet. Your feelings do not matter. That being
-              said, We don't condone any form of Racism. None. Any Hard R or
-              Racist memes will result in an instant BAN.
+              We don't condone any form of bigotry, discrimination, or
+              harassment on our servers, during our streams, or in real life.
+              Ever. If you enagage in any forms of the aforementioned behaviors,
+              including sharing racist memes or doxxing someone on the server,
+              expect to be permanently banned immediately. There are no
+              exceptions to this rule.
             </li>
             <li>
               BTF and it’s permanent members can and will follow up the "BAN
