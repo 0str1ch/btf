@@ -176,12 +176,22 @@ const Layout = props => (
           padding: 0px;
         }
 
-        ul > li::before {
-          content: "–";
+      /*  ul > li::before {
+          content: "-";
           display: inline-block;
           color: var(--hint-light);
           position: absolute;
           margin-left: -1em;
+        }*/
+
+        ul > li::before {
+          content: "▶";
+          display: inline-block;
+          color: var(--primary-basic);
+          position: absolute;
+          margin-left: -1.5em;
+          margin-top: 0.5em;
+          font-size: 0.6em;
         }
 
         li {

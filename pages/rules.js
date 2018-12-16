@@ -30,12 +30,19 @@ export default () => (
               exceptions to this rule.
             </li>
             <li>
-              BTF and it’s permanent members can and will follow up the "BAN
-              POLICY" with repeated offenders without warning. You may challenge
-              this ban with a rather gentlemanly Trial By Combat. If you lose,
-              it’s back to the original ban. If you win, you may or may not be
-              banned for an acceptable amount of time in relation to the gravity
-              of your crime.
+              BTF and it’s members can and will enfore these all of these rules,
+              and may ban or kick repeated offenders without warning. If your
+              infraction is not serious and is considered annoying but harmless
+              in nature, you may challenge your first ban with a rather
+              gentlemanly Trial By Combat in a game of our choosing. If you
+              lose, you'll be banned for the appropriate amount of time. If you
+              win your Trial By Combat, you may or may not be banned for an
+              acceptable amount of time in relation to the gravity of your
+              infraction(s).{" "}
+              <strong>
+                There is no appealing bans related to bigotry, discrimination,
+                or harassment. You have been warned. Twice, now, by our count.
+              </strong>
             </li>
             <li>
               Please do not speak over each other, BTF members have priority

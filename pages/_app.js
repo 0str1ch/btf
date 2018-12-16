@@ -26,6 +26,7 @@ export default class MyApp extends App {
               rgba(237, 33, 58, 1) 0%,
               rgba(147, 41, 30, 1) 100%
             );
+            --primary-basic: rgba(237, 33, 58, 1);
             --primary-light: rgba(255, 255, 255, 1);
             --secondary: rgba(46, 62, 72, 0.6);
             --secondary-light: rgba(255, 255, 255, 0.7);
