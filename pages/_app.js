@@ -38,7 +38,7 @@ export default class MyApp extends App {
             --dark-text: rgba(0, 0, 0, 0.87);
             --secondary-text: rgba(0, 0, 0, 0.67);
             --light-text: #fff;
-            --money: #2A7221;
+            --money: #2a7221;
           }
 
           :root {
@@ -173,7 +173,7 @@ export default class MyApp extends App {
             width: 100%;
           }
 
-          @keyframes fadeup {
+          @keyframes slideRight {
             0% {
               transform: translateX(100%);
             }
@@ -185,7 +185,14 @@ export default class MyApp extends App {
             }
           }
 
-         
+          @keyframes fadeup {
+            0% {
+              transform: translateY(100%);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
         `}</style>
       </Container>
     );
