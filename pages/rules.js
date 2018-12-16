@@ -45,14 +45,17 @@ export default () => (
               </strong>
             </li>
             <li>
-              Please do not speak over each other, BTF members have priority
-              talk over the guests. Remember this otherwise you will get a swift
-              kick from the server/channel, repeat offenders will be followed up
-              by the "BAN POLICY"
+              Please do not speak over each other when in voice channels on our
+              Discord or TeamSpeak server. BTF members always have priority
+              speaking privileges over our guests. Remember to follow this rule,
+              otherwise you will be kicked from the server/channel. Repeat
+              offenders will be punished according to our Ban Policy below.
             </li>
             <li>
-              No chat spam, please. Memes are dank and all, but no one wants to
-              see all 746 memes you liked today.
+              Spamming chat with text, jokes, or memes is NOT allowed unless
+              given explicit permission by a BTF member or channel owner. Memes
+              are dank and all, but no one wants to see every single one you
+              have ever saved.
             </li>
           </ul>
 
