@@ -19,15 +19,19 @@ const GalleryWrapper = props => (
         .gallery_scroll div,
         .gallery_scroll img {
           scroll-snap-align: center;
-          margin: 1em;
+          margin: 0 0.5em;
+          width: 75%;
         }
 
-        .gallery::-webkit-scrollbar {
-          display: none;
+        .gallery::-webkit-scrollbar,
+        .gallery_scroll::-webkit-scrollbar {
+          width: 0;
         }
 
-        .gallery img {
-          width: 100%;
+        @media screen and (min-width: 1200px) {
+          .gallery_scroll img:nth-of-type(1n + 5) {
+            display: none;
+          }
         }
       `}
     </style>

@@ -1,0 +1,14 @@
+ {
+   "mapping": {
+     "twitch": {
+       "title": "Twitch",
+       "link": "https://m.twitch.tv",
+       "src": "/static/images/showcases/twitch.jpg"
+     },
+     "ebay": {
+       "title": "Ebay Haitao",
+       "link": "https://haitao.ebay.com",
+       "src": "/static/images/showcases/ebay-haitao.jpg"
+     }
+   }
+ }

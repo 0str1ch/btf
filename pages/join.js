@@ -5,19 +5,23 @@ import Meta from "../components/Meta";
 import GalleryWrapper from "../components/gallery/gallery-wrapper";
 
 
+const data = [{ title: "test1" }, { title: "test2" }];
+const listItems = data.map(d => <div key={d.title}>{d.title}</div>);
+
+
 export default () => (
   <Layout>
-    <Meta/>
+    <Meta />
     <Container padding>
       <section className="intro">
-        <h1>HOLY CRAP</h1>
+        <div>{listItems}</div>
         <GalleryWrapper>
-          <img src="/static/redraw_group.png" alt=""/>
-          <img src="/static/redraw_group.png" alt=""/>
-          <img src="/static/redraw_group.png" alt=""/>
-          <img src="/static/redraw_group.png" alt=""/>
-          <img src="/static/redraw_group.png" alt=""/>
-          <img src="/static/redraw_group.png" alt=""/>
+          <img src="/static/redraw_group.png" alt="" />
+          <img src="/static/redraw_group.png" alt="" />
+          <img src="/static/redraw_group.png" alt="" />
+          <img src="/static/redraw_group.png" alt="" />
+          <img src="/static/redraw_group.png" alt="" />
+          <img src="/static/redraw_group.png" alt="" />
         </GalleryWrapper>
       </section>
     </Container>

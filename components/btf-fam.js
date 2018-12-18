@@ -17,7 +17,8 @@ const BTFfam = () => (
           bottom: -1rem;
           left: 0;
           z-index: 100;
-          animation: fadeup 900ms cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.3s 1 normal both running;
+          animation: fadeup 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.2s 1 normal both running;
+          will-change: transform;
         }
       `}
     </style>
