@@ -5,7 +5,7 @@ import Meta from "../components/Meta";
 import GalleryWrapper from "../components/gallery/gallery-wrapper";
 
 
-const data = [{ title: "test1" }, { title: "test2" }];
+const data = [{ title: "test10" }, { title: "test2" }];
 const listItems = data.map(d => <div key={d.title}>{d.title}</div>);
 
 
