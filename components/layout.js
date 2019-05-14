@@ -1,11 +1,12 @@
 import Header from "./Header";
 import Meta from "./Meta";
 
-const Layout = props => (
+function Layout({ title, description, children }) {
+  return (
   <main className="layoutWrapper layoutWrapperDark">
     <Meta />
     <Header />
-    <div className="layoutInner">{props.children}</div>
+    <div className="layoutInner">{children}</div>
     <style jsx global>
       {`
         .layoutWrapper {
@@ -422,5 +423,6 @@ const Layout = props => (
     </style>
   </main>
 );
+      }
 
 export default Layout;
