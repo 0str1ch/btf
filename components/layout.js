@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "./header";
 import Meta from "./Meta";
 
 function Layout({ title, description, children }) {
